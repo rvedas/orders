@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "shaklee_orders_json"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "callidus_orders_json"
+        }
+    },
+    "id": "c8dbc716-dff2-41e3-afd2-be3714c7aee4",
+    "version": "5.2.0.0"
+}

@@ -1,0 +1,23 @@
+{
+   "Connector": {
+      "Transaction": {
+         "Function": "rtv_update",
+         "Trans_Date": "20170519",
+         "Trans_Time": "150915",
+         "Country": "USA",
+         "Curency": "USD",
+         "Order_ID": "1816137089F",
+         "Order_Type": "TRANSFER",
+         "Order_Date": "20170401",
+         "Bill_Date": "20170401",
+         "Adj_Type": "01",
+         "Descr": "PV TRANSFER",
+         "Sales_Plan": "LEGACY",
+         "PV_Date": "20170401",
+         "PV_Distributor": "RE79181",
+         "Total_PV": "71.57",
+         "Total_QV": "71.57",
+         "Business_Leader": "RE79181"
+      }
+   }
+}

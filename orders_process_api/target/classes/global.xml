@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:anypoint-mq="http://www.mulesoft.org/schema/mule/anypoint-mq"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<anypoint-mq:config name="Anypoint_MQ_Orders"
+		doc:name="Anypoint MQ Configuration">
+		<anypoint-mq:provider url="${shaklee_apmq_url}"
+			clientId="${shaklee_mq_client_app_id}" clientSecret="${shaklee_mq_client_app_secret}" />
+	</anypoint-mq:config>
+	<http:request-config name="HTTP_Request_Callidus"
+		host="${callidus_orders_host}" port="${callidus_orders_port}"
+		doc:name="HTTP Request Configuration" />
+	<context:property-placeholder location="orders_process_api_${env}.properties" />
+    <configuration defaultExceptionStrategy-ref="Catch_Exception_Strategy_Orders" doc:name="Configuration">
+        <http:config useTransportForUris="false"/>
+    </configuration>
+	<catch-exception-strategy name="Catch_Exception_Strategy_Orders">
+		<logger
+			message="Failed to Invoke Callidus API. The response received from Callidus Orders API is : #[message.payloadAs(String)]"
+			level="INFO" doc:name="log_generic_error" />
+		<logger
+			message="http.status: #[message.inboundProperties.'http.status'] ~ http.reason: #[message.inboundProperties.'http.reason'] ~ error.log.message: &quot;failed to invoke callidus orders api&quot; ~ callidus.response.body: #[message.payloadAs(String)]"
+			level="INFO" doc:name="log_to_central_logs" />
+		<anypoint-mq:publish config-ref="Anypoint_MQ_Orders"
+			destination="${shaklee_orders_backout_queue}" doc:name="write_to_backout_queue" />
+	</catch-exception-strategy>
+
+</mule>
