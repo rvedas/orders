@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "RTV_volume_transaction_xml"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "RTV_volume_transaction_json"
+        }
+    },
+    "id": "9f9fc179-9554-4bd0-a06d-4b414d4c8956",
+    "version": "5.2.0.0"
+}

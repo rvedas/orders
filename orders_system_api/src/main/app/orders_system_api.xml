@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:anypoint-mq="http://www.mulesoft.org/schema/mule/anypoint-mq"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata"
+	xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:sftp="http://www.mulesoft.org/schema/mule/sftp"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
+	xmlns:ftp="http://www.mulesoft.org/schema/mule/ee/ftp" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/ftp http://www.mulesoft.org/schema/mule/ee/ftp/current/mule-ftp-ee.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd">
+
+	<flow name="Orders_System_API_FLow">
+		<file:inbound-endpoint path="/Users/shiva/Desktop/shaklee/orders/input"
+			connector-ref="File_orders" responseTimeout="10000" doc:name="File_orders">
+			<file:filename-regex-filter pattern=".*.xml"
+				caseSensitive="true" />
+		</file:inbound-endpoint>
+		<logger message="Orders Original Message : #[message.payloadAs(String)]"
+			level="INFO" doc:name="Full_XML_Logger" />
+		<set-session-variable variableName="orig_file_name"
+			value="#[message.inboundProperties.originalFilename]" doc:name="Session Variable" />
+		<splitter expression="#[xpath3('//Transaction',message.payload,'NODESET')]"
+			tracking:enable-default-events="true" doc:name="Transaction splitter" />
+		<vm:outbound-endpoint exchange-pattern="one-way"
+			path="transaction-processing" doc:name="VM_Out_for_Parallel_Processing" />
+		<exception-strategy ref="globalCatch_Exception_Strategy"
+			doc:name="Reference Exception Strategy" />
+	</flow>
+	<flow name="Orders_parallel_transaction_processing">
+		<vm:inbound-endpoint exchange-pattern="one-way"
+			path="transaction-processing" doc:name="VM_In_for_Parallel_Processing" />
+		<flow-ref name="route_rt_batch" doc:name="route_rt_batch" />
+	</flow>
+	<flow name="route_rt_batch">
+		<logger level="INFO" doc:name="Logger"
+			message="About to make choice : &quot;Real Time&quot; or &quot;Batch&quot;" />
+		<choice doc:name="Choice">
+			<when
+				expression="#[org.mule.util.StringUtils.startsWithIgnoreCase(sessionVars.orig_file_name,&quot;rt&quot;)]">
+				<flow-ref name="order_rt_processing" doc:name="order_rt_processing" />
+			</when>
+			<when
+				expression="#[org.mule.util.StringUtils.startsWithIgnoreCase(sessionVars.orig_file_name,&quot;batch&quot;)]">
+				<flow-ref name="order_batch_processing" doc:name="order_batch_processing" />
+			</when>
+			<otherwise>
+				<logger
+					message="oops, something gone wrong. File Name Must start with &quot;rt&quot; or &quot;batch&quot;"
+					level="INFO" doc:name="Logger" />
+			</otherwise>
+		</choice>
+	</flow>
+	<flow name="order_rt_processing" processingStrategy="asynchronous">
+		<logger level="INFO" doc:name="Real Time Single XML Logger"
+			message="Real time Single Transaction XML : #[message.payloadAs(String)]" />
+		<dw:transform-message doc:name="Transform Message"
+			metadata:id="500234d2-6651-40f2-a392-8e224ad88c25">
+			<dw:input-payload mimeType="application/xml" />
+			<dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+	Connector: {
+		Transaction: {
+			Function: payload.Transaction.Function,
+			Trans_Date: payload.Transaction.Trans_Date,
+			Trans_Time: payload.Transaction.Trans_Time,
+			Country: payload.Transaction.Country,
+			Curency: payload.Transaction.Curency,
+			Order_ID: payload.Transaction.Order_ID,
+			Order_Type: payload.Transaction.Order_Type,
+			Order_Date: payload.Transaction.Order_Date,
+			Bill_Date: payload.Transaction.Bill_Date,
+			Source: payload.Transaction.Source,
+			Adj_Type: payload.Transaction.Adj_Type,
+			Adj_Code: payload.Transaction.Adj_Code,
+			Descr: payload.Transaction.Descr,
+			Sales_Plan: payload.Transaction.Sales_Plan,
+			Price_Tier: payload.Transaction.Price_Tier,
+			Resale: payload.Transaction.Resale,
+			PV_Date: payload.Transaction.PV_Date,
+			PV_Distributor: payload.Transaction.PV_Distributor,
+			Total_PV: payload.Transaction.Total_PV,
+			Total_QV: payload.Transaction.Total_QV,
+			AR_Distributor: payload.Transaction.AR_Distributor,
+			AR_Date: payload.Transaction.AR_Date,
+			AR_Type: payload.Transaction.AR_Type,
+			Payment_Type: payload.Transaction.Payment_Type,
+			Total_Sale: payload.Transaction.Total_Sale,
+			Total_Paid: payload.Transaction.Total_Paid,
+			Business_Leader: payload.Transaction.Business_Leader,
+			Total_SN: payload.Transaction.Total_SN,
+			Total_DN: payload.Transaction.Total_DN,
+			Total_MN: payload.Transaction.Total_MN,
+			Total_SRP: payload.Transaction.Total_SRP,
+			Diff_SN_DN: payload.Transaction.Diff_SN_DN,
+			Diff_DN_MN: payload.Transaction.Diff_DN_MN,
+			Diff_MN_SRP: payload.Transaction.Diff_MN_SRP,
+			Total_Special: payload.Transaction.Total_Special
+		}
+	}
+}]]></dw:set-payload>
+		</dw:transform-message>
+		<logger
+			message="Real time Single Transaction JSON : #[message.payloadAs(String)]"
+			level="INFO" doc:name="Real Time Single JSON Logger" />
+		<anypoint-mq:publish config-ref="Anypoint_MQ_Configuration"
+			doc:name="Anypoint MQ" destination="${shaklee_orders_input_exchange}" />
+	</flow>
+	<flow name="order_batch_processing" processingStrategy="asynchronous">
+		<logger level="INFO" doc:name="Batch Single XML Logger"
+			message="Batch Single Transaction XML : #[message.payloadAs(String)]" />
+		<dw:transform-message doc:name="Transform Message"
+			metadata:id="500234d2-6651-40f2-a392-8e224ad88c25">
+			<dw:input-payload mimeType="application/xml" />
+			<dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+	Connector: {
+		Transaction: {
+			Function: payload.Transaction.Function,
+			Trans_Date: payload.Transaction.Trans_Date,
+			Trans_Time: payload.Transaction.Trans_Time,
+			Country: payload.Transaction.Country,
+			Curency: payload.Transaction.Curency,
+			Order_ID: payload.Transaction.Order_ID,
+			Order_Type: payload.Transaction.Order_Type,
+			Order_Date: payload.Transaction.Order_Date,
+			Bill_Date: payload.Transaction.Bill_Date,
+			Source: payload.Transaction.Source,
+			Adj_Type: payload.Transaction.Adj_Type,
+			Adj_Code: payload.Transaction.Adj_Code,
+			Descr: payload.Transaction.Descr,
+			Sales_Plan: payload.Transaction.Sales_Plan,
+			Price_Tier: payload.Transaction.Price_Tier,
+			Resale: payload.Transaction.Resale,
+			PV_Date: payload.Transaction.PV_Date,
+			PV_Distributor: payload.Transaction.PV_Distributor,
+			Total_PV: payload.Transaction.Total_PV,
+			Total_QV: payload.Transaction.Total_QV,
+			AR_Distributor: payload.Transaction.AR_Distributor,
+			AR_Date: payload.Transaction.AR_Date,
+			AR_Type: payload.Transaction.AR_Type,
+			Payment_Type: payload.Transaction.Payment_Type,
+			Total_Sale: payload.Transaction.Total_Sale,
+			Total_Paid: payload.Transaction.Total_Paid,
+			Business_Leader: payload.Transaction.Business_Leader,
+			Total_SN: payload.Transaction.Total_SN,
+			Total_DN: payload.Transaction.Total_DN,
+			Total_MN: payload.Transaction.Total_MN,
+			Total_SRP: payload.Transaction.Total_SRP,
+			Diff_SN_DN: payload.Transaction.Diff_SN_DN,
+			Diff_DN_MN: payload.Transaction.Diff_DN_MN,
+			Diff_MN_SRP: payload.Transaction.Diff_MN_SRP,
+			Total_Special: payload.Transaction.Total_Special
+		}
+	}
+}]]></dw:set-payload>
+		</dw:transform-message>
+		<logger message="Batch Single Transaction JSON : #[message.payloadAs(String)]"
+			level="INFO" doc:name="Batch Single JSON Logger" />
+		<anypoint-mq:publish config-ref="Anypoint_MQ_Configuration"
+			doc:name="Anypoint MQ" destination="${shaklee_orders_input_exchange}" />
+	</flow>
+
+
+</mule>

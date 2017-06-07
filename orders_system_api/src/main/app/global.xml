@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:sftp="http://www.mulesoft.org/schema/mule/sftp"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ftp="http://www.mulesoft.org/schema/mule/ee/ftp"
+	xmlns:anypoint-mq="http://www.mulesoft.org/schema/mule/anypoint-mq" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:cluster="http://www.mulesoft.org/schema/mule/ee/cluster" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/sftp http://www.mulesoft.org/schema/mule/sftp/current/mule-sftp.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd 
+http://www.mulesoft.org/schema/mule/ee/ftp http://www.mulesoft.org/schema/mule/ee/ftp/current/mule-ftp-ee.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/anypoint-mq http://www.mulesoft.org/schema/mule/anypoint-mq/current/mule-anypoint-mq.xsd">
+    <configuration defaultExceptionStrategy-ref="globalCatch_Exception_Strategy" doc:name="Configuration">
+        <http:config useTransportForUris="false"/>
+    </configuration>
+    <anypoint-mq:config name="Anypoint_MQ_Configuration" doc:name="Anypoint MQ Configuration">
+        <anypoint-mq:provider url="${shaklee_apmq_url}" clientId="${shaklee_mq_client_app_id}" clientSecret="${shaklee_mq_client_app_secret}"/>
+    </anypoint-mq:config>
+    <ftp:connector name="CalidusRTV_FTP_drop_point" binary="false" pollingFrequency="1000" validateConnections="true" moveToDirectory="${calidus.rtv.ftp.archive.path}" moveToPattern="${calidus.rtv.ftp.archive.ext}" doc:name="FTP"/>
+    <context:property-placeholder location="orders_system_api_${env}.properties"/>
+    <sftp:connector name="calidusSftpDropPoint" validateConnections="true" archiveDir="${calidus.rtv.ftp.archive.path}" tempDirInbound="working" tempDirOutbound="finished" useTempFileTimestampSuffix="true" doc:name="SFTP">
+        <file:expression-filename-parser/>
+    </sftp:connector>
+    <file:connector name="File_orders" autoDelete="true" streaming="true" validateConnections="true" doc:name="File"/>
+    <catch-exception-strategy name="globalCatch_Exception_Strategy">
+        <logger message="oops, something gone wrong. Exception was raised. File moved to error directory. Here's the exception message : #[(exception.cause!=null)?(exception.cause.message):exception]" level="INFO" doc:name="Logger"/>
+        <logger level="ERROR" doc:name="Logger" message="oops, something gone wrong. Exception was raised. File moved to error directory. Here's the error message : #[org.mule.util.ExceptionUtils.getFullStackTrace(exception)]"/>
+        <file:outbound-endpoint path="/Users/shiva/Desktop/shaklee/orders/error" connector-ref="File_orders" responseTimeout="10000" doc:name="File"/>
+    </catch-exception-strategy>
+</mule>

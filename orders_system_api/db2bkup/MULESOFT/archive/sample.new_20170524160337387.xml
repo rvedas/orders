@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Connector>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137089F</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>01</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170401</PV_Date>
+      <PV_Distributor>RE79181</PV_Distributor>
+      <Total_SPV>-71.57</Total_SPV>
+      <Business_Leader>RE79181</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137089T</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>01</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170401</PV_Date>
+      <PV_Distributor>RE80177</PV_Distributor>
+      <Total_SPV>71.57</Total_SPV>
+      <Business_Leader>RE79181</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137009F</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>01</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170401</PV_Date>
+      <PV_Distributor>RE79181</PV_Distributor>
+      <Total_SPV>-105.03</Total_SPV>
+      <Business_Leader>RE79181</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137009T</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>01</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170401</PV_Date>
+      <PV_Distributor>SE43054</PV_Distributor>
+      <Total_SPV>105.03</Total_SPV>
+      <Business_Leader>RE79181</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137269F</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>24</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>HA21377</PV_Distributor>
+      <Total_SPV>-173.13</Total_SPV>
+      <Business_Leader>HA21377</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132729</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137269T</Order_ID>
+      <Order_Type>TRANSFER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>24</Adj_Type>
+      <Descr>PV TRANSFER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>HA21720</PV_Distributor>
+      <Total_SPV>173.13</Total_SPV>
+      <Business_Leader>HA21720</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132730</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816136950</Order_ID>
+      <Order_Type>ORDER</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>SITE</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>PH</Adj_Code>
+      <Descr>PHONE ORDER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <Price_Tier>SN</Price_Tier>
+      <Resale>PERSONAL</Resale>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>NE10075</PV_Distributor>
+      <Total_SPV>57.30</Total_SPV>
+      <AR_Distributor>NE10075</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>PC</Payment_Type>
+      <Total_Sale>66.22</Total_Sale>
+      <Total_Paid>66.22</Total_Paid>
+      <Business_Leader>NE10075</Business_Leader>
+      <Total_SN>58.40</Total_SN>
+      <Total_DN>64.20</Total_DN>
+      <Total_MN>74.50</Total_MN>
+      <Total_SRP>87.60</Total_SRP>
+      <Lines>
+         <Line Number="1000">
+            <Product>20607</Product>
+            <Description>SAW PALMETTO PLUS CAPSULES 60</Description>
+            <Quantity>2</Quantity>
+            <Amount_SPV>57.30</Amount_SPV>
+            <Amount_SN>58.40</Amount_SN>
+            <Amount_DN>64.20</Amount_DN>
+            <Amount_MN>74.50</Amount_MN>
+            <Amount_SRP>87.60</Amount_SRP>
+            <Amount_Sold>58.40</Amount_Sold>
+         </Line>
+         <Line Number="9910">
+            <Product>99925</Product>
+            <Description>SHIPPING AND HANDLING</Description>
+            <Quantity>1</Quantity>
+            <Amount_SN>8.49</Amount_SN>
+            <Amount_DN>8.49</Amount_DN>
+            <Amount_MN>8.49</Amount_MN>
+            <Amount_SRP>8.49</Amount_SRP>
+            <Amount_Sold>8.49</Amount_Sold>
+         </Line>
+         <Line Number="9990">
+            <Product>99903</Product>
+            <Description>EFT 1&amp;#37; DISCOUNT</Description>
+            <Quantity>-1</Quantity>
+            <Amount_SN>-0.67</Amount_SN>
+            <Amount_DN>-0.67</Amount_DN>
+            <Amount_MN>-0.67</Amount_MN>
+            <Amount_SRP>-0.67</Amount_SRP>
+            <Amount_Sold>-0.67</Amount_Sold>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132730</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>5912895990</Order_ID>
+      <Order_Type>ORDER</Order_Type>
+      <Order_Date>20170331</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>WEB1</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>WB</Adj_Code>
+      <Descr>WEB ORDER</Descr>
+      <Sales_Plan>DREAM</Sales_Plan>
+      <Price_Tier>DN</Price_Tier>
+      <Resale>PERSONAL</Resale>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>ZL32262</PV_Distributor>
+      <Total_SPV>141.44</Total_SPV>
+      <AR_Distributor>ZL32262</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>CD</Payment_Type>
+      <Total_Sale>192.76</Total_Sale>
+      <Total_Paid>192.76</Total_Paid>
+      <Business_Leader>ZR11884</Business_Leader>
+      <Total_SN>154.84</Total_SN>
+      <Total_DN>170.32</Total_DN>
+      <Total_MN>197.49</Total_MN>
+      <Total_SRP>232.38</Total_SRP>
+      <Lines>
+         <Line Number="1000">
+            <Product>21261</Product>
+            <Description>LIFE E. SHAKE VAN.15 SVG</Description>
+            <Quantity>2</Quantity>
+            <Amount_SPV>58.44</Amount_SPV>
+            <Amount_SN>60.39</Amount_SN>
+            <Amount_DN>66.42</Amount_DN>
+            <Amount_MN>77.04</Amount_MN>
+            <Amount_SRP>90.63</Amount_SRP>
+            <Amount_Sold>66.42</Amount_Sold>
+            <Amount_Tax>4.98</Amount_Tax>
+         </Line>
+         <Line Number="1002">
+            <Product>20496</Product>
+            <Description>SHAKLEE PERFORMANCE O CAN</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>8.59</Amount_SPV>
+            <Amount_SN>9.70</Amount_SN>
+            <Amount_DN>10.65</Amount_DN>
+            <Amount_MN>12.35</Amount_MN>
+            <Amount_SRP>14.55</Amount_SRP>
+            <Amount_Sold>10.65</Amount_Sold>
+            <Amount_Tax>0.80</Amount_Tax>
+         </Line>
+         <Line Number="1004">
+            <Product>20158</Product>
+            <Description>SHAKLEE ENERGY</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>10.00</Amount_SPV>
+            <Amount_SN>14.10</Amount_SN>
+            <Amount_DN>15.50</Amount_DN>
+            <Amount_MN>17.95</Amount_MN>
+            <Amount_SRP>21.15</Amount_SRP>
+            <Amount_Sold>15.50</Amount_Sold>
+            <Amount_Tax>1.16</Amount_Tax>
+         </Line>
+         <Line Number="1006">
+            <Product>22030</Product>
+            <Description>SHAKLEE 180 ENER.TEA POM.</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>14.66</Amount_SPV>
+            <Amount_SN>19.95</Amount_SN>
+            <Amount_DN>21.95</Amount_DN>
+            <Amount_MN>25.45</Amount_MN>
+            <Amount_SRP>29.95</Amount_SRP>
+            <Amount_Sold>21.95</Amount_Sold>
+            <Amount_Tax>1.65</Amount_Tax>
+         </Line>
+         <Line Number="1008">
+            <Product>20656</Product>
+            <Description>STRESS RELIEF COMPLEX*</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>21.15</Amount_SPV>
+            <Amount_SN>21.55</Amount_SN>
+            <Amount_DN>23.70</Amount_DN>
+            <Amount_MN>27.50</Amount_MN>
+            <Amount_SRP>32.35</Amount_SRP>
+            <Amount_Sold>23.70</Amount_Sold>
+            <Amount_Tax>1.78</Amount_Tax>
+         </Line>
+         <Line Number="1010">
+            <Product>20603</Product>
+            <Description>GENTLE SLEEP COMPLEX*</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>15.95</Amount_SPV>
+            <Amount_SN>16.25</Amount_SN>
+            <Amount_DN>17.90</Amount_DN>
+            <Amount_MN>20.75</Amount_MN>
+            <Amount_SRP>24.40</Amount_SRP>
+            <Amount_Sold>17.90</Amount_Sold>
+            <Amount_Tax>1.34</Amount_Tax>
+         </Line>
+         <Line Number="1012">
+            <Product>21216</Product>
+            <Description>CHEWABLE CAL MAG PLUS</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>12.65</Amount_SPV>
+            <Amount_SN>12.90</Amount_SN>
+            <Amount_DN>14.20</Amount_DN>
+            <Amount_MN>16.45</Amount_MN>
+            <Amount_SRP>19.35</Amount_SRP>
+            <Amount_Sold>14.20</Amount_Sold>
+            <Amount_Tax>1.06</Amount_Tax>
+         </Line>
+         <Line Number="9910">
+            <Product>99925</Product>
+            <Description>SHIPPING AND HANDLING</Description>
+            <Quantity>1</Quantity>
+            <Amount_SN>8.99</Amount_SN>
+            <Amount_DN>8.99</Amount_DN>
+            <Amount_MN>8.99</Amount_MN>
+            <Amount_SRP>8.99</Amount_SRP>
+            <Amount_Sold>8.99</Amount_Sold>
+            <Amount_Tax>0.68</Amount_Tax>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132730</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>5912896050</Order_ID>
+      <Order_Type>ORDER</Order_Type>
+      <Order_Date>20170331</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>WEB1</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>WB</Adj_Code>
+      <Descr>WEB ORDER</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <Price_Tier>SN</Price_Tier>
+      <Resale>PERSONAL</Resale>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>ZM02374</PV_Distributor>
+      <Total_SPV>54.65</Total_SPV>
+      <AR_Distributor>NE32209</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>CD</Payment_Type>
+      <Total_Sale>71.99</Total_Sale>
+      <Total_Paid>71.99</Total_Paid>
+      <Business_Leader>KE97970</Business_Leader>
+      <Total_Share>9.16</Total_Share>
+      <Total_SN>66.65</Total_SN>
+      <Total_DN>73.35</Total_DN>
+      <Total_MN>85.00</Total_MN>
+      <Total_SRP>100.00</Total_SRP>
+      <Lines>
+         <Line Number="1000">
+            <Product>21500</Product>
+            <Description>VIVIX</Description>
+            <Quantity>1</Quantity>
+            <Amount_SPV>54.65</Amount_SPV>
+            <Amount_SN>66.65</Amount_SN>
+            <Amount_DN>73.35</Amount_DN>
+            <Amount_MN>85.00</Amount_MN>
+            <Amount_SRP>100.00</Amount_SRP>
+            <Amount_Sold>66.65</Amount_Sold>
+            <Amount_Tax>5.34</Amount_Tax>
+         </Line>
+         <Line Number="9910">
+            <Product>99925</Product>
+            <Description>SHIPPING AND HANDLING</Description>
+            <Quantity>1</Quantity>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132730</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>5912896550</Order_ID>
+      <Order_Type>ORDER</Order_Type>
+      <Order_Date>20170331</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>WEB1</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>WB</Adj_Code>
+      <Descr>WEB ORDER</Descr>
+      <Sales_Plan>DREAM</Sales_Plan>
+      <Price_Tier>DN</Price_Tier>
+      <Resale>RESALE</Resale>
+      <PV_Date>20170331</PV_Date>
+      <PV_Distributor>WY39138</PV_Distributor>
+      <Total_SPV>1696.12</Total_SPV>
+      <AR_Distributor>WY39138</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>CD</Payment_Type>
+      <Total_Sale>2115.59</Total_Sale>
+      <Total_Paid>2115.59</Total_Paid>
+      <Business_Leader>WY39138</Business_Leader>
+      <Total_SN>1865.20</Total_SN>
+      <Total_DN>2051.80</Total_DN>
+      <Total_MN>2379.60</Total_MN>
+      <Total_SRP>2799.20</Total_SRP>
+      <Lines>
+         <Line Number="1000">
+            <Product>21261</Product>
+            <Description>LIFE E. SHAKE VAN.15 SVG</Description>
+            <Quantity>9</Quantity>
+            <Amount_SPV>262.98</Amount_SPV>
+            <Amount_SN>301.95</Amount_SN>
+            <Amount_DN>332.10</Amount_DN>
+            <Amount_MN>385.20</Amount_MN>
+            <Amount_SRP>453.15</Amount_SRP>
+            <Amount_Sold>332.10</Amount_Sold>
+         </Line>
+         <Line Number="1002">
+            <Product>21267</Product>
+            <Description>LIFE SHK STRAWBRY 15 SVG</Description>
+            <Quantity>8</Quantity>
+            <Amount_SPV>233.76</Amount_SPV>
+            <Amount_SN>268.40</Amount_SN>
+            <Amount_DN>295.20</Amount_DN>
+            <Amount_MN>342.40</Amount_MN>
+            <Amount_SRP>402.80</Amount_SRP>
+            <Amount_Sold>295.20</Amount_Sold>
+         </Line>
+         <Line Number="1004">
+            <Product>21270</Product>
+            <Description>LIFE SHK CAFELATT 15 SVG</Description>
+            <Quantity>11</Quantity>
+            <Amount_SPV>321.42</Amount_SPV>
+            <Amount_SN>369.05</Amount_SN>
+            <Amount_DN>405.90</Amount_DN>
+            <Amount_MN>470.80</Amount_MN>
+            <Amount_SRP>553.85</Amount_SRP>
+            <Amount_Sold>405.90</Amount_Sold>
+         </Line>
+         <Line Number="1006">
+            <Product>21264</Product>
+            <Description>LIFE SHAKE CHOC 15 SVG</Description>
+            <Quantity>8</Quantity>
+            <Amount_SPV>233.76</Amount_SPV>
+            <Amount_SN>268.40</Amount_SN>
+            <Amount_DN>295.20</Amount_DN>
+            <Amount_MN>342.40</Amount_MN>
+            <Amount_SRP>402.80</Amount_SRP>
+            <Amount_Sold>295.20</Amount_Sold>
+         </Line>
+         <Line Number="1008">
+            <Product>20652</Product>
+            <Description>CAROTOMAX 30 COUNT SIZE</Description>
+            <Quantity>20</Quantity>
+            <Amount_SPV>293.00</Amount_SPV>
+            <Amount_SN>299.00</Amount_SN>
+            <Amount_DN>329.00</Amount_DN>
+            <Amount_MN>382.00</Amount_MN>
+            <Amount_SRP>449.00</Amount_SRP>
+            <Amount_Sold>329.00</Amount_Sold>
+         </Line>
+         <Line Number="1010">
+            <Product>80638</Product>
+            <Description>OPTIFLORA PREBIOTIC/PROBIOTIC</Description>
+            <Type>HEADER</Type>
+            <Quantity>16</Quantity>
+         </Line>
+         <Line Number="1012">
+            <Product>20638</Product>
+            <Description>OPTIFLORA PREBIOTIC POWDER</Description>
+            <Type>COMPONENT</Type>
+            <Quantity>16</Quantity>
+            <Amount_SPV>131.20</Amount_SPV>
+            <Amount_SN>133.60</Amount_SN>
+            <Amount_DN>147.20</Amount_DN>
+            <Amount_MN>170.40</Amount_MN>
+            <Amount_SRP>200.80</Amount_SRP>
+            <Amount_Sold>147.20</Amount_Sold>
+         </Line>
+         <Line Number="1014">
+            <Product>20639</Product>
+            <Description>OPTIFLORA PROBIOTIC CAPSULE 30</Description>
+            <Type>COMPONENT</Type>
+            <Quantity>16</Quantity>
+            <Amount_SPV>220.00</Amount_SPV>
+            <Amount_SN>224.80</Amount_SN>
+            <Amount_DN>247.20</Amount_DN>
+            <Amount_MN>286.40</Amount_MN>
+            <Amount_SRP>336.80</Amount_SRP>
+            <Amount_Sold>247.20</Amount_Sold>
+         </Line>
+         <Line Number="9910">
+            <Product>99925</Product>
+            <Description>SHIPPING AND HANDLING</Description>
+            <Quantity>1</Quantity>
+            <Amount_SN>63.79</Amount_SN>
+            <Amount_DN>63.79</Amount_DN>
+            <Amount_MN>63.79</Amount_MN>
+            <Amount_SRP>63.79</Amount_SRP>
+            <Amount_Sold>63.79</Amount_Sold>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132836</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816143460</Order_ID>
+      <Order_Type>RETURN</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>SITE</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>AG</Adj_Code>
+      <Descr>RET. GUAR.</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <Price_Tier>MN</Price_Tier>
+      <Resale>PERSONAL</Resale>
+      <PV_Date>20170329</PV_Date>
+      <PV_Distributor>ZF03919</PV_Distributor>
+      <Total_SPV>-3.87</Total_SPV>
+      <Original_Order>5912822710</Original_Order>
+      <AR_Distributor>ZF03919</AR_Distributor>
+      <AR_Date>20170401</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>CD</Payment_Type>
+      <Total_Sale>-8.47</Total_Sale>
+      <Total_Paid>-8.47</Total_Paid>
+      <Business_Leader>CF81471</Business_Leader>
+      <Total_SN>-6.05</Total_SN>
+      <Total_DN>-6.65</Total_DN>
+      <Total_MN>-7.75</Total_MN>
+      <Total_SRP>-9.10</Total_SRP>
+      <Lines>
+         <Line Number="1020">
+            <Product>00302</Product>
+            <Description>BASIC H2 WIPES 35 CT.</Description>
+            <Quantity>-1</Quantity>
+            <Amount_SPV>-3.87</Amount_SPV>
+            <Amount_SN>-6.05</Amount_SN>
+            <Amount_DN>-6.65</Amount_DN>
+            <Amount_MN>-7.75</Amount_MN>
+            <Amount_SRP>-9.10</Amount_SRP>
+            <Amount_Sold>-7.75</Amount_Sold>
+            <Amount_Tax>-0.72</Amount_Tax>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132836</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816143850</Order_ID>
+      <Order_Type>RETURN</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Source>SITE</Source>
+      <Adj_Type>02</Adj_Type>
+      <Adj_Code>AG</Adj_Code>
+      <Descr>RET. GUAR.</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <Price_Tier>MN</Price_Tier>
+      <Resale>PERSONAL</Resale>
+      <PV_Date>20161112</PV_Date>
+      <PV_Distributor>XM07050</PV_Distributor>
+      <Total_SPV>-25.30</Total_SPV>
+      <Original_Order>1814567870</Original_Order>
+      <AR_Distributor>XM07050</AR_Distributor>
+      <AR_Date>20170401</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>CD</Payment_Type>
+      <Total_Sale>-32.90</Total_Sale>
+      <Total_Paid>-32.90</Total_Paid>
+      <Business_Leader>BE19191</Business_Leader>
+      <Total_SN>-25.80</Total_SN>
+      <Total_DN>-28.40</Total_DN>
+      <Total_MN>-32.90</Total_MN>
+      <Total_SRP>-38.70</Total_SRP>
+      <Lines>
+         <Line Number="1020">
+            <Product>21216</Product>
+            <Description>CHEWABLE CAL MAG PLUS</Description>
+            <Quantity>-2</Quantity>
+            <Amount_SPV>-25.30</Amount_SPV>
+            <Amount_SN>-25.80</Amount_SN>
+            <Amount_DN>-28.40</Amount_DN>
+            <Amount_MN>-32.90</Amount_MN>
+            <Amount_SRP>-38.70</Amount_SRP>
+            <Amount_Sold>-32.90</Amount_Sold>
+         </Line>
+      </Lines>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132839</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816137599</Order_ID>
+      <Order_Type>PAYMENT</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>11</Adj_Type>
+      <Descr>CASH ON ACCOUNT</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <AR_Distributor>XE69313</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>PC</Payment_Type>
+      <Total_Paid>250.00</Total_Paid>
+      <Change_Paid>250.00</Change_Paid>
+      <Business_Leader>XE69313</Business_Leader>
+   </Transaction>
+   <Transaction>
+      <Function>rtv_update</Function>
+      <Trans_Date>20170515</Trans_Date>
+      <Trans_Time>132839</Trans_Time>
+      <Country>USA</Country>
+      <Curency>USD</Curency>
+      <Order_ID>1816143719</Order_ID>
+      <Order_Type>PAYMENT</Order_Type>
+      <Order_Date>20170401</Order_Date>
+      <Bill_Date>20170401</Bill_Date>
+      <Adj_Type>11</Adj_Type>
+      <Descr>CASH ON ACCOUNT</Descr>
+      <Sales_Plan>LEGACY</Sales_Plan>
+      <AR_Distributor>XE28321</AR_Distributor>
+      <AR_Date>20170331</AR_Date>
+      <AR_Type>PROD</AR_Type>
+      <Payment_Type>PC</Payment_Type>
+      <Total_Paid>493.53</Total_Paid>
+      <Change_Paid>493.53</Change_Paid>
+      <Business_Leader>XE28321</Business_Leader>
+   </Transaction>
+</Connector>
